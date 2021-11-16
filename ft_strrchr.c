@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:00:28 by ren-nasr          #+#    #+#             */
-/*   Updated: 2021/11/15 17:01:26 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2021/11/16 10:42:24 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
+	char	*res;
+	int		i;
 
-	len = ft_strlen(s) + 1;
-	while (len > 0)
+	res = NULL;
+	i = 0;
+	while (s[i])
 	{
-		if (s[len - 1] == c)
-			return ((char *)&s[len - 1]);
-		len = len - 1;
+		if (s[i] == (char)c)
+			res = &((char *)s)[i];
+		i = i + 1;
 	}
-	return (NULL);
+	if (c == '\0')
+		res = &((char *)s)[i];
+	return (res);
 }

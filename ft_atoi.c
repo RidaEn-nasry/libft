@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 21:23:23 by ren-nasr          #+#    #+#             */
-/*   Updated: 2021/11/15 19:35:14 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2021/11/16 10:01:00 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  * Additional non-numerich characters are ignored
  */
 
-int	round_prevent(int sign)
+static int	round_prevent(int sign)
 {
 	if (sign == -1)
 		return (0);

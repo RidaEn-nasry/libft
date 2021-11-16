@@ -6,15 +6,12 @@
 #    By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 19:29:45 by ren-nasr          #+#    #+#              #
-#    Updated: 2021/11/15 21:29:55 by ren-nasr         ###   ########.fr        #
+#    Updated: 2021/11/16 09:59:48 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-# Name
 NAME = libft.a
-
-# Source Files
 
 SRCS = ft_atoi.c \
 		ft_bzero.c \
@@ -60,7 +57,6 @@ SRCS = ft_atoi.c \
 
 
 
-NAME = libft.a
 
 
 BONUS = ft_lstadd_back.c ft_lstadd_front.c  ft_lstdelone.c\

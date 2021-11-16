@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2021/11/15 21:01:07 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2021/11/16 10:00:27 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
+void				*ft_calloc(size_t count, size_t size);
 
 /*
 ** FILE DESCRIPTORS MANIPULATION

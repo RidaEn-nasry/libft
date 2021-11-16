@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:23:56 by ren-nasr          #+#    #+#             */
-/*   Updated: 2021/11/15 16:04:09 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2021/11/16 10:48:43 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ft_split("*hello*you**ugly*bag**full*of*mostly**water*", ’*’)
 returns the array ["hello", "you", "ugly", "bag", "full","of","mostly", "water"].
 */
 
-size_t	word_count(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
 	size_t	i;
 	size_t	cnt;

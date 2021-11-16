@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:01:38 by ren-nasr          #+#    #+#             */
-/*   Updated: 2021/11/15 17:05:12 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2021/11/16 10:02:02 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ’s1’ with the characters specified in ’set’ removed
 from the beginning and the end of the string. */
 
-int	ft_getstart(const char *s1, const char *set)
+static int	ft_getstart(const char *s1, const char *set)
 {
 	size_t	len;
 	size_t	i;
