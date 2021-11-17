@@ -1,2 +1,2 @@
 # libft.a
-Re-implemented static library of the standard c library.
+Re-implemented static library of some of the standard c library functions.
