@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+         #
+#    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 19:29:45 by ren-nasr          #+#    #+#              #
-#    Updated: 2021/11/16 09:59:48 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/04/16 18:20:16 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = ft_atoi.c \
 		ft_isascii.c \
 		ft_isdigit.c \
 		ft_isprint.c \
-		ft_itoa.c \
+		ft_itoa.c\
 		ft_lstdelone.c \
 		ft_lstnew.c \
 		ft_memchr.c \
@@ -54,7 +54,7 @@ SRCS = ft_atoi.c \
 		ft_lstnew.c \
 		ft_lstsize.c \
 		ft_strlcpy.c \
-
+		ft_strstr.c \
 
 
 
