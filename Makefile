@@ -6,10 +6,12 @@
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 19:29:45 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/04/16 18:20:16 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/04/21 22:48:22 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# silent mode 
+MAKEFLAGS = -s
 
 NAME = libft.a
 
@@ -55,6 +57,8 @@ SRCS = ft_atoi.c \
 		ft_lstsize.c \
 		ft_strlcpy.c \
 		ft_strstr.c \
+		exitIF.c \
+		ft_strtok.c\
 
 
 
@@ -70,7 +74,7 @@ OBJSBONUS = ${BONUS:.c=.o}
 CC		= gcc
 RM		= rm -f
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 all: logo ${NAME}
 
@@ -80,14 +84,17 @@ all: logo ${NAME}
 $(NAME): ${OBJS} 
 		ar rcs ${NAME} ${OBJS}
 
+
+# if silent mode is activated, we don't want to see the following messages
+# when we run make
 logo:
-	@echo " _     _ _    ______ _____"
-	@echo "| |   (_) |   |  ___|_   _|"
-	@echo "| |    _| |__ | |_    | | "
-	@echo "| |   | | '_ \|  _|   | | "
-	@echo "| |___| | |_) | |     | | "
-	@echo "\_____/_|_.__/\_|     \_/ "
-	@echo "\n"
+	# @echo " _     _ _    ______ _____"
+	# @echo "| |   (_) |   |  ___|_   _|"
+	# @echo "| |    _| |__ | |_    | | "
+	# @echo "| |   | | '_ \|  _|   | | "
+	# @echo "| |___| | |_) | |     | | "
+	# @echo "\_____/_|_.__/\_|     \_/ "
+	# @echo "\n"
 
 bonus:	${OBJS} ${OBJSBONUS}
 		ar rc ${NAME} ${OBJS} ${OBJSBONUS}

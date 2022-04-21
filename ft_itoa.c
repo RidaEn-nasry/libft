@@ -6,57 +6,44 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 09:33:30 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/04/16 18:23:53 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/04/21 22:46:24 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /* Convert int into a string */
 
-size_t				get_len(int n)
+char	*ft_itoa(int n)
 {
-	size_t	len;
+	char	*str;
+	int		i;
+	int		sign;
 
+	i = 0;
+	sign = 0;
 	if (n == 0)
-		return (1);
-	len = 0;
+		return (ft_strdup("0"));
 	if (n < 0)
-		len++;
-	while (n)
 	{
-		n /= 10;
-		len++;
+		sign = 1;
+		n = -n;
 	}
-	return (len);
-}
-
-char* ft_itoa(int n)
-{
-	size_t	len;
-	size_t	i;
-	char* result;
-
-	len = get_len(n);
-	if (!(result = (char*)malloc(len + 1)))
+	while (n > 0)
+	{
+		i++;
+		n = n / 10;
+	}
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (str == NULL)
 		return (NULL);
-	result[len] = '\0';
-	if (n < 0)
+	str[i] = '\0';
+	while (i > 0)
 	{
-		result[0] = '-';
-		i = 1;
+		str[i - 1] = (n % 10) + '0';
+		n = n / 10;
+		i--;
 	}
-	else
-		i = 0;
-	while (len-- > i)
-		if (n < 0)
-		{
-			result[len] = '0' + n % 10 * (-1);
-			n = n / 10;
-		}
-		else
-		{
-			result[len] = '0' + n % 10;
-			n = n / 10;
-		}
-	return (result);
+	if (sign == 1)
+		str[0] = '-';
+	return (str);
 }

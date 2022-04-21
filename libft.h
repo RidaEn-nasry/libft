@@ -6,9 +6,10 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/04/16 18:17:00 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/04/21 22:49:12 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -55,6 +56,9 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char				*ft_strstr(const char *heystack, const char *needle);
 
+// =================== in test mode =========================
+char				*ft_strtok(char *str, const char *delim);
+
 /*
 ** MEMORY MANIIPULATION
 */
@@ -86,5 +90,11 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_front(t_list **alst, t_list *new);
+
+
+/* 
+**	error handling
+*/ 
+// int exitIF(int condition, char *message);
 
 #endif
