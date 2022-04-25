@@ -6,7 +6,7 @@
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 19:29:45 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/04/25 10:40:13 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/04/25 13:33:49 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,8 @@ SRCS = ft_atoi.c \
 		ft_strtok.c\
 		ft_isspace.c\
 		ft_realloc.c\
-
+		ft_doublen.c\
+		ft_doubtrim.c\
 
 
 BONUS = ft_lstadd_back.c ft_lstadd_front.c  ft_lstdelone.c\

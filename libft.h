@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/04/25 11:08:25 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:33:28 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ char				*ft_strstr(const char *heystack, const char *needle);
 
 char				*ft_strtok(char *str, const char *delim);
 int					*ft_isspace(char c);
+size_t				ft_doublen(char **str);
+char				**ft_doubtrim(char **doub, char *set);
 /*
 ** MEMORY MANIIPULATION
 */
@@ -80,7 +82,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 
 /*
-** LISTS MANIPULATION
+** LINKED LISTS MANIPULATION
 */
 
 t_list				*ft_lstnew(void *content);
