@@ -6,7 +6,7 @@
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 19:29:45 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/04/24 15:46:39 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/04/25 10:40:13 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRCS = ft_atoi.c \
 		exitIF.c \
 		ft_strtok.c\
 		ft_isspace.c\
+		ft_realloc.c\
 
 
 
