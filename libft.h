@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/04/25 13:33:28 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:03:44 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,12 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_front(t_list **alst, t_list *new);
+
+
+/* 
+**	Math functions
+*/
+long int		ft_isPrime(long int n);
 
 
 /* 
