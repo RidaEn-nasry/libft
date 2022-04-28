@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:23:56 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/04/28 12:56:38 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/04/28 13:02:15 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static char	*word_dup(const char *str, int start, int finish)
 }
 
 
-char		**ft_split(char const *s, char c)
+char		**ft_splitq(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -68,7 +68,7 @@ char		**ft_split(char const *s, char c)
         if (s[i] == '"' || s[i] == '\'')
         {
             char q  = s[i] == '"' ? '"' : '\'';
-            int k = i + 1;
+            size_t k = i + 1;
             while (s[k] && s[k] != q)
             {
                 k++;
