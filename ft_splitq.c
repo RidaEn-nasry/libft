@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_splitq.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:23:56 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/04/27 18:32:25 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/04/28 12:56:38 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* Allocates (with malloc()) 
-and returns an array  of “fresh” strings 
-(all ending with ’\0’, including the array itself) obtained
-by spliting s using the character c as a delimiter.
-If the allocation fails the function returns NULL. Example:
-ft_split("*hello*you**ugly*bag**full*of*mostly**water*", ’*’)
-returns the array ["hello", "you", "ugly", "bag", "full","of","mostly", "water"].
-*/
 
+
+/* ft_splitq is a function which seperates given string using delimiter c except for sections between quotes.
+ */ 
 
 static int	count_words(const char *str, char c)
 {
@@ -70,12 +65,28 @@ char		**ft_split(char const *s, char c)
 	index = -1;
 	while (i <= ft_strlen(s))
 	{
+        if (s[i] == '"' || s[i] == '\'')
+        {
+            char q  = s[i] == '"' ? '"' : '\'';
+            int k = i + 1;
+            while (s[k] && s[k] != q)
+            {
+                k++;
+            }
+           if (k != ft_strlen(s))
+           {
+               split[j++] = word_dup(s, i, k + 1);
+               i = k + 1;
+           }
+            
+        }
 		if (s[i] != c && index < 0)
 		{
 			index = i;
 		}
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
+        
 			split[j++] = word_dup(s, index, i);
 			index = -1;
 		}
@@ -83,4 +94,4 @@ char		**ft_split(char const *s, char c)
 	}
 	split[j] = 0;
 	return (split);
-}	
+}

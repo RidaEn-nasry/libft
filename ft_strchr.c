@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 12:09:59 by ren-nasr          #+#    #+#             */
-/*   Updated: 2021/11/16 06:52:45 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/04/26 14:20:26 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,14 @@
 ** therefore if c is `\0', the functions locate the terminating `\0'.
 */
 
-char	*ft_strchr(const char *s, int c)
+// char	*ft_strchr(const char *s, int c)
+// {
+// 	return ((char *)ft_memchr(s, c, ft_strlen(s) + 1));
+// }
+
+char *ft_strchr(const char *s, int c)
 {
+	if (!s)
+		return (NULL);
 	return ((char *)ft_memchr(s, c, ft_strlen(s) + 1));
 }

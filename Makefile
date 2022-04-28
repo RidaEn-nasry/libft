@@ -6,7 +6,7 @@
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 19:29:45 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/04/26 16:04:05 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/04/28 12:58:09 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,9 +61,9 @@ SRCS = ft_atoi.c \
 		ft_strtok.c\
 		ft_isspace.c\
 		ft_realloc.c\
-		ft_doublen.c\
 		ft_doubtrim.c\
 		ft_isPrime.c\
+		ft_splitq.c\
 
 
 BONUS = ft_lstadd_back.c ft_lstadd_front.c  ft_lstdelone.c\
@@ -82,7 +82,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 all: logo ${NAME}
 
 %.o: %.c 
-		${CC} ${CFLAGS}  -c $< -o $@
+		${CC} ${CFLAGS}  -c -g $< -o $@
 
 $(NAME): ${OBJS} 
 		ar rcs ${NAME} ${OBJS}
