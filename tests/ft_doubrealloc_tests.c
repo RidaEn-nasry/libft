@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:19:29 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/10 12:30:44 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:37:16 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ START_TEST (test_ft_doubrealloc_1)
 
     ptr = NULL;
     ptr = ft_doubrealloc(ptr, 1);
-    ck_assert_ptr_eq(ptr[0], NULL);
+    ck_assert_ptr_eq(ptr, NULL);
 
 } END_TEST;
 
@@ -34,9 +34,13 @@ START_TEST (test_ft_doubrealloc_2)
     ptr = malloc(sizeof(char *) * 2);
     ptr[0] = strdup("test");
     ptr[1] = NULL;
+    ptr = ft_doubrealloc(ptr, 3);
     ck_assert_ptr_nonnull(ptr);
-    ck_assert_ptr_eq(ptr[0], "test");
-    ck_assert_ptr_eq(ptr[1], NULL);
+    ptr[1] = strdup("test2");
+    ck_assert_str_eq(ptr[0], "test");
+    ck_assert_str_eq(ptr[1], "test2");
+    ck_assert_ptr_nonnull(ptr[2]);
+    ck_assert_ptr_eq(ptr[3], NULL);
     ft_safeFree(ptr);
 } END_TEST;
 
@@ -51,16 +55,28 @@ START_TEST (test_ft_doubrealloc_3)
         ptr[i] = strdup(ft_itoa(i));
     }
     ptr[10] = NULL;
-    // check length of double pointer is 10;
-    ck_assert_int_eq(10, ft_doublen((const char **)ptr));
+    ptr = ft_doubrealloc(ptr, 20);
+    ck_assert_ptr_nonnull(ptr);
+    // checking first 10 bytes are populated with i.
     for (int i= 0; i < 10; i++)
     {
-        ck_assert_ptr_nonnull(ptr[i]);
-        ck_assert_ptr_eq(ptr[i], ft_itoa(i));
+        ck_assert_str_eq(ptr[i], ft_itoa(i));
     }
-    ck_assert_ptr_eq(ptr[10], NULL);
+    // checking last 10 bytes are allocated.
+    
+    // check last byte is NULL.
+    ck_assert_ptr_eq(ptr[20], NULL);
+    // fill the last 10 bytes with i.
+    for (int i = 10; i < 20; i++)
+    {
+        ptr[i] = strdup(ft_itoa(i));
+    }
+    // check length is now 20.
+    ck_assert_int_eq(ft_doublen((const char **)ptr), 20);
+    // check length of double pointer is 10;
+    
     ft_doubfree(ptr, 0);
-}
+} END_TEST;
 
 
 
