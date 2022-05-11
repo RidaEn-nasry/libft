@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_safe_free.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 18:12:43 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/09 14:06:12 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/05/08 15:57:00 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/05/11 13:22:57 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* 
+    ft_safeFree:
+        @description:
+            - free a pointer if it is not NULL 
+        @param:
+            - void *ptr: pointer to free
+        @return:
+            - void
+*/
+
 #include "libft.h"
 
-/* function allocates sufficient memory for a copy of the string s1,
- does the copy, and returns a pointer to it */
-
-char	*ft_strdup(const char *s1)
+void    ft_sfree(void *ptr)
 {
-	char	*s2;
-	size_t	i;
-
-	i = 0;
-	if (!(s2 = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
-		return (NULL);
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i = i + 1;
-	}
-	s2[i] = '\0';
-	return (s2);
+    if (ptr)
+    {
+        free(ptr);
+        ptr = NULL;
+    }   
 }

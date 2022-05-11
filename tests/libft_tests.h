@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:15:27 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/10 12:30:48 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/10 14:11:56 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ typedef struct s_suites
 
 // suites prototypes
 Suite *ft_doubreallo_suite(void);
-
-
-
 
 
 #endif 

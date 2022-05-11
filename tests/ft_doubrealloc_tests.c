@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:19:29 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/10 13:37:16 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:06:12 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,21 @@ START_TEST (test_ft_doubrealloc_3)
 } END_TEST;
 
 
+START_TEST (test_ft_doubrealloc_4)
+{
+    void **ptr;
+    
+    ptr = NULL;
+    ptr = malloc(sizeof(char *));
+    ptr[0] = NULL;
+    ptr = ft_doubrealloc(ptr, 1);
+    ck_assert_ptr_nonnull(ptr);
+    ptr[0] = strdup("test");
+    ck_assert_str_eq(ptr[0], "test");
+    ck_assert_ptr_eq(ptr[1], NULL);
+    ck_assert_int_eq(ft_doublen((const char **)ptr), 1);
+    ft_doubfree(ptr, 0);
+}
 
 
 Suite *ft_doubreallo_suite(void)
@@ -89,7 +104,9 @@ Suite *ft_doubreallo_suite(void)
     TCase *tc_1;
     TCase *tc_2;
     TCase *tc_3;
+    TCase *tc_4;
 
+    
     tc_1 = tcase_create("test_ft_doubrealloc_1");
     tcase_add_test(tc_1, test_ft_doubrealloc_1);
     suite_add_tcase(s, tc_1);
@@ -102,5 +119,9 @@ Suite *ft_doubreallo_suite(void)
     tcase_add_test(tc_3, test_ft_doubrealloc_3);
     suite_add_tcase(s, tc_3);
     
+    tc_4 = tcase_create("test_ft_doubrealloc_4");
+    tcase_add_test(tc_4, test_ft_doubrealloc_4);
+    suite_add_tcase(s, tc_4);
+
     return (s);
 }

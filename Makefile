@@ -1,4 +1,4 @@
-# **************************************************************************** #
+ # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -57,13 +57,20 @@ SRCS = ft_atoi.c \
 		ft_lstsize.c \
 		ft_strlcpy.c \
 		ft_strstr.c \
-		exitIF.c \
+		exitif.c \
 		ft_strtok.c\
 		ft_isspace.c\
 		ft_realloc.c\
 		ft_doubtrim.c\
 		ft_isPrime.c\
-		ft_splitq.c\
+		ft_doublen.c\
+		ft_doubrealloc.c\
+		ft_doubfree.c\
+		ft_stcount.c\
+		ft_sfree.c\
+		ft_valid_fname.c\
+		
+
 
 
 BONUS = ft_lstadd_back.c ft_lstadd_front.c  ft_lstdelone.c\

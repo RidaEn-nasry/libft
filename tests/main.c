@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:19:18 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/10 12:32:08 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:04:55 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Suite *getSuite(char *name)
 }
 
 
-t_suites *init_data(void)
+t_suites *init(void)
 {
     
     suites = malloc(sizeof(*suites));
@@ -43,12 +43,10 @@ t_suites *init_data(void)
 }
 
 
-
-
 int main(int argc, char **argv)
 {
     
-    suites = init_data();
+    suites = init();
     int number_failed;
     
     (void)argc;
@@ -57,6 +55,7 @@ int main(int argc, char **argv)
         printf("Usage: ./test_runner <suite_name>\n");
         return 1;
     }
+    
     Suite *s;
     SRunner *sr;
     s  = getSuite(argv[1]);

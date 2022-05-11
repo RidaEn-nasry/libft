@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/04/28 13:04:37 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:23:03 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdio.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -49,7 +50,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s, const char *set);
 char				**ft_split(char const *s, char c);
-char 				**ft_splitq(char const *s, char c);
+// char 				**ft_splitq(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strnstr(const char *haystack, \
 						const char *needle, size_t len);
@@ -60,8 +61,9 @@ char				*ft_strstr(const char *heystack, const char *needle);
 char				*ft_strtok(char *str, const char *delim);
 int					*ft_isspace(char c);
 char				**ft_doubtrim(char **doub, char *set);
-
-
+int					*ft_stcount(const char *s, char c);
+size_t				ft_doublen(const char **doub);
+char 				*ft_getnextS(char *s);
 /*
 ** MEMORY MANIIPULATION
 */
@@ -74,6 +76,10 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_calloc(size_t count, size_t size);
 void				*ft_realloc(void *ptr, size_t size);
+void				ft_sfree(void *ptr);
+void				ft_doubfree(void **doub, size_t size);
+void				**ft_doubrealloc(void **doub, size_t size);
+
 
 /*
 ** FILE DESCRIPTORS MANIPULATION
@@ -98,12 +104,24 @@ void				ft_lstadd_front(t_list **alst, t_list *new);
 /* 
 **	Math functions
 */
-long int		ft_isPrime(long int n);
+long int			ft_isPrime(long int n);
 
 
 /* 
 **	error handling
 */ 
-int exitIF(int condition, char *message);
+int					exitIF(int condition, char *message);
+
+/*
+** Miscelaneous functions
+*/
+
+void				*ft_ternary(int condition, void *true_value, \
+															void *false_value);
+															
+/* 
+** files manipulation
+*/
+bool	ft_validfname(char *name);
 
 #endif

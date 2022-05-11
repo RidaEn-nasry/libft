@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_doublen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 18:12:43 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/09 14:06:12 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/05/05 09:29:54 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/05/05 14:01:38 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_doublen(const char **)
+    * 
+    * @description: this function computes the length of the double pointer. 
+    * @param const char **double: pointer to a pointer to a string
+    * @return: the length of the string
+*/
+
 #include "libft.h"
 
-/* function allocates sufficient memory for a copy of the string s1,
- does the copy, and returns a pointer to it */
-
-char	*ft_strdup(const char *s1)
+size_t  ft_doublen(char const **doub)
 {
-	char	*s2;
-	size_t	i;
+    size_t i;
 
-	i = 0;
-	if (!(s2 = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
-		return (NULL);
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i = i + 1;
-	}
-	s2[i] = '\0';
-	return (s2);
+    i = 0;
+    while (doub[i])
+        i++;
+    return (i);
 }
