@@ -69,7 +69,7 @@ SRCS = ft_atoi.c \
 		ft_stcount.c\
 		ft_sfree.c\
 		ft_valid_fname.c\
-		
+		ft_ternary.c
 
 
 
