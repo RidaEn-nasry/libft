@@ -71,6 +71,7 @@ SRCS = ft_atoi.c \
 		ft_valid_fname.c\
 		ft_ternary.c\
 		ft_intternary.c\
+		ft_getenv.c
 
 
 
