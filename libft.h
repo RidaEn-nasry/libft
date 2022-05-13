@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/13 15:03:06 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/13 19:57:44 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,9 @@ int					*ft_isspace(char c);
 char				**ft_doubtrim(char **doub, char *set);
 int					*ft_stcount(const char *s, char c);
 size_t				ft_doublen(const char **doub);
-char 				*ft_getnextS(char *s);
+char				*ft_getnextS(char *s);
+char				*ft_doubconcat(char **doub, char *s);
+
 /*
 ** MEMORY MANIIPULATION
 */
@@ -106,10 +108,10 @@ void				ft_lstadd_front(t_list **alst, t_list *new);
 */
 long int			ft_isPrime(long int n);
 
-
 /* 
 **	error handling
-*/ 
+*/
+
 int					exitIF(int condition, char *message);
 
 /*
@@ -117,13 +119,13 @@ int					exitIF(int condition, char *message);
 */
 
 void				*ft_ternary(int condition, void *true_value, \
-															void *false_value);						
-int 				ft_intternary(int condition, int true_value, \
-															int false_value);
+						void *false_value);						
+int					ft_intternary(int condition, int true_value, \
+						int false_value);
 char				*ft_getenv(char **env, char *var);
 /* 
 ** files manipulation
 */
-bool	ft_validfname(char *name);
+bool				ft_validfname(char *name);
 
 #endif
