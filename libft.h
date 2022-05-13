@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/11 13:23:03 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/13 11:35:36 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,9 @@ int					exitIF(int condition, char *message);
 void				*ft_ternary(int condition, void *true_value, \
 															void *false_value);
 															
+int 				ft_intternary(int condition, int true_value, \
+															int false_value);
+
 /* 
 ** files manipulation
 */
