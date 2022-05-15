@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/15 10:35:50 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/15 11:00:03 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,14 @@ void				*ft_ternary(int condition, void *true_value, \
 						void *false_value);						
 int					ft_intternary(int condition, int true_value, \
 						int false_value);
+						
+/*  
+** env manipulation
+*/
+
 char				*ft_getenv(char **env, char *var);
 bool				ft_envexist(char **env, char *var);
+char				*ft_envexp(char **env, char *var);
 /* 
 ** files manipulation
 */

@@ -74,7 +74,8 @@ SRCS = ft_atoi.c \
 		ft_getenv.c\
 		ft_doubconcat.c\
 		ft_envexist.c\
-		ft_lineinsert.c
+		ft_lineinsert.c\
+		ft_envexp.c
 
 
 
