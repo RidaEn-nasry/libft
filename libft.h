@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/15 11:53:26 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/22 12:45:34 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,11 @@ char				*ft_strstr(const char *heystack, const char *needle);
 
 char				*ft_strtok(char *str, const char *delim);
 int					*ft_isspace(char c);
-char				**ft_doubtrim(char **doub, char *set);
 int					*ft_stcount(const char *s, char c);
-size_t				ft_doublen(const char **doub);
 char				*ft_getnextS(char *s);
-char				*ft_doubconcat(char **doub, char *s);
 char				*ft_lineinsert(char *line, char *content, \
 													size_t start, size_t end);
-
+char				*ft_lindetach(char *line, size_t start, size_t end);
 /*
 ** MEMORY MANIIPULATION
 */
@@ -81,8 +78,19 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_calloc(size_t count, size_t size);
 void				*ft_realloc(void *ptr, size_t size);
 void				ft_sfree(void *ptr);
+
+/* 
+** DOUBLE POINTER MANIPULATION
+*/
+
 void				ft_doubfree(void **doub, size_t size);
 void				**ft_doubrealloc(void **doub, size_t size);
+char				**ft_doubdel(char **array, size_t start, size_t end);
+char				**ft_doubtrim(char **doub, char *set);
+size_t				ft_doublen(const char **doub);
+char				*ft_doubconcat(char **doub, char *s);
+
+
 
 
 /*
@@ -124,7 +132,7 @@ void				*ft_ternary(int condition, void *true_value, \
 						void *false_value);						
 int					ft_intternary(int condition, int true_value, \
 						int false_value);
-						
+
 /*  
 ** env manipulation
 */
@@ -132,7 +140,7 @@ int					ft_intternary(int condition, int true_value, \
 char				*ft_getenv(char **env, char *var);
 bool				ft_envexist(char **env, char *var);
 char				*ft_envexp(char **env, char *var);
-bool				ft_validenvname(char *env_name);
+bool				ft_valid_envname(char *env_name);
 
 /* 
 ** files manipulation
