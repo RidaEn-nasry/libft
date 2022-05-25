@@ -78,7 +78,8 @@ SRCS = ft_atoi.c \
 		ft_envexp.c\
 		ft_valid_envname.c\
 		ft_linedetach.c\
-		ft_doubdel.c
+		ft_doubdel.c\
+		ft_doubcount.c
 
 
 

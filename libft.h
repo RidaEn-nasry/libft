@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/22 12:45:34 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/25 11:09:04 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char				**ft_doubdel(char **array, size_t start, size_t end);
 char				**ft_doubtrim(char **doub, char *set);
 size_t				ft_doublen(const char **doub);
 char				*ft_doubconcat(char **doub, char *s);
-
+int					ft_doubcount(const char **doub, char *to_find);
 
 
 
