@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/25 11:09:04 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/25 11:38:41 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,26 @@
 # include <stdio.h>
 # include <stdbool.h>
 
+// linked lists
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+// Absract syntax trees (AST)
+// @note: content is a pointer to a void to be able to store any type of data in the AST
+typedef	struct		s_AST
+{
+	void			*content;
+	struct s_AST	*left;
+	struct s_AST	*right;
+}					t_AST;
+
+t_AST	*ft_ast_new_node(void *content);
+void	free_ast(t_AST *ast);
+t_AST	*ft_ast_add_node(t_AST *ast, void *content);
+
 
 /*
 ** String manipulation
