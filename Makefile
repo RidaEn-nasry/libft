@@ -80,7 +80,8 @@ SRCS = ft_atoi.c \
 		ft_linedetach.c\
 		ft_doubdel.c\
 		ft_doubcount.c\
-		ft_ast_new_node.c
+		ft_ast_new_node.c\
+		ft_free_ast.c
 
 
 

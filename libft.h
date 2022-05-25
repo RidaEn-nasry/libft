@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/25 11:38:41 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/25 11:48:28 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,13 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-// Absract syntax trees (AST)
-// @note: content is a pointer to a void to be able to store any type of data in the AST
+/* Absract syntax trees (AST)\
+	@NOTE:
+		- content of the node is a void pointer to be able to store any data type.
+			and to be as generic as possible. generic code means quality code.
+				just look at American Propoganda's success.			
+*/
+
 typedef	struct		s_AST
 {
 	void			*content;
@@ -38,8 +43,8 @@ typedef	struct		s_AST
 }					t_AST;
 
 t_AST	*ft_ast_new_node(void *content);
-void	free_ast(t_AST *ast);
 t_AST	*ft_ast_add_node(t_AST *ast, void *content);
+void	ft_free_ast(t_AST *ast);
 
 
 /*
