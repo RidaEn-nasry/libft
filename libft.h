@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/25 11:48:28 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/25 12:04:05 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,16 @@ typedef struct s_list
 
 typedef	struct		s_AST
 {
+	char			*sym;
 	void			*content;
 	struct s_AST	*left;
 	struct s_AST	*right;
 }					t_AST;
 
-t_AST	*ft_ast_new_node(void *content);
-t_AST	*ft_ast_add_node(t_AST *ast, void *content);
+t_AST	*ft_ast_new_node(char *sym, void *content);
+t_AST	*ft_ast_add_node(t_AST *ast, char *sym, void *content);
 void	ft_free_ast(t_AST *ast);
+void	ft_print_ast(t_AST *ast);
 
 
 /*

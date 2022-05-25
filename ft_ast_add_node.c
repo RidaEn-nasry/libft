@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_ast.c                                      :+:      :+:    :+:   */
+/*   ft_ast_add_node.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 11:48:44 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/25 11:59:06 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/05/25 11:29:07 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/05/25 11:58:23 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 	@description:
-		- free the ast 
+		- add a node to the ast
 	@param: 
 		- t_AST *root: the root of the ast
+		- t_AST *node: the node to add
 	@return:
-		- void
+		- t_AST *: the root of the ast
 	@IMPORTANT:
-		- the content of the nodes is not freed, as it is void * it can a simple char * 
-			or some complex struct, you can't tell,so you can't free it.
-	@note:
-		- the freeing is done recursively
+		- the node is added to the right of the last right leaf of the ast
 */
 
 #include "libft.h"
 
-void	ft_free_ast(t_AST *root)
+t_AST	*ft_ast_add_node(t_AST *root, char *sym, void *content)
 {
-	if (root)
-	{
-		ft_sfree(root->sym);
-		ft_free_ast(root->left);
-		ft_free_ast(root->right);
-		free(root);
-	}
+	t_AST	*tmp;
+
+	if (!root)
+		return (ft_ast_new_node(sym, content));
+	tmp = root;
+	while (tmp->right)
+		tmp = tmp->right;
+	tmp->right = ft_ast_new_node(sym, content);
+	return (root);
 }
