@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/25 12:04:05 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/26 11:44:34 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ char				*ft_getnextS(char *s);
 char				*ft_lineinsert(char *line, char *content, \
 													size_t start, size_t end);
 char				*ft_lindetach(char *line, size_t start, size_t end);
+char				**ft_strsplit(char const *s, char *delim);
+
 /*
 ** MEMORY MANIIPULATION
 */
