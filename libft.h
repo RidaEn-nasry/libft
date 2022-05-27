@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/26 13:49:55 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/27 09:32:10 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,12 @@ typedef	struct		s_AST
 t_AST				*ft_ast_new_node(char *sym, void *content);
 t_AST				*ft_ast_add_noder(t_AST *ast, char *sym, void *content);
 t_AST				*ft_ast_add_nodel(t_AST *ast, char *sym, void *content);
-t_AST				*ft_ast_add_nodelri(t_AST *ast, char *sym, void *content, size_t i);
+t_AST				*ft_ast_add_nodelri(t_AST *ast, char *sym, \
+					void *content, size_t i);
 t_AST				*ft_ast_add_noderli(t_AST *ast, char *sym, void *content, size_t i);
 void				ft_free_ast(t_AST *ast);
 void				ft_print_ast(t_AST *ast);
-
+t_AST	*ft_ast_add_nodei(t_AST *root, char *sym, void *content, char *where);
 /*
 ** String manipulation
 */
