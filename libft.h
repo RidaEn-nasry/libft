@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/27 09:32:10 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/05/28 09:40:43 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-/* Absract syntax trees (AST)\
+/* Absract syntax trees (ast)\
 	@NOTE:
 		- content of the node is a void pointer to be able to store any data type.
 			and to be as generic as possible. generic code means quality code.
@@ -41,17 +41,18 @@ typedef	struct		s_AST
 	void			*content;
 	struct s_AST	*left;
 	struct s_AST	*right;
-}					t_AST;
+	struct s_AST	*prev;
+}					t_ast;
 
-t_AST				*ft_ast_new_node(char *sym, void *content);
-t_AST				*ft_ast_add_noder(t_AST *ast, char *sym, void *content);
-t_AST				*ft_ast_add_nodel(t_AST *ast, char *sym, void *content);
-t_AST				*ft_ast_add_nodelri(t_AST *ast, char *sym, \
+t_ast				*ft_ast_new_node(char *sym, void *content);
+t_ast				*ft_ast_add_noder(t_ast *ast, char *sym, void *content);
+t_ast				*ft_ast_add_nodel(t_ast *ast, char *sym, void *content);
+t_ast				*ft_ast_add_nodelri(t_ast *ast, char *sym, \
 					void *content, size_t i);
-t_AST				*ft_ast_add_noderli(t_AST *ast, char *sym, void *content, size_t i);
-void				ft_free_ast(t_AST *ast);
-void				ft_print_ast(t_AST *ast);
-t_AST	*ft_ast_add_nodei(t_AST *root, char *sym, void *content, char *where);
+t_ast				*ft_ast_add_noderli(t_ast *ast, char *sym, void *content, size_t i);
+void				ft_free_ast(t_ast *ast);
+void				ft_print_ast(t_ast *ast);
+t_ast				*ft_ast_add_nodei(t_ast *root, char *sym, void *content, char *where);
 /*
 ** String manipulation
 */
@@ -117,8 +118,7 @@ char				**ft_doubtrim(char **doub, char *set);
 size_t				ft_doublen(const char **doub);
 char				*ft_doubconcat(char **doub, char *s);
 int					ft_doubcount(const char **doub, char *to_find);
-
-
+char				**ft_doubdup(char **doub);
 
 /*
 ** FILE DESCRIPTORS MANIPULATION
@@ -138,7 +138,6 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_front(t_list **alst, t_list *new);
-
 
 /* 
 **	Math functions
