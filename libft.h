@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/28 09:40:43 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:04:12 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 # include <limits.h>
 # include <stdio.h>
 # include <stdbool.h>
+# include <fcntl.h>
 
+# define BUFF_SIZE 1024
 // linked lists
 typedef struct s_list
 {
@@ -127,6 +129,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char const *s, int fd);
+int					ft_filecpy(char *filepath, char *filecpy);
 
 /*
 ** LINKED LISTS MANIPULATION

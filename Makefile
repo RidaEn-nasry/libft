@@ -89,7 +89,8 @@ SRCS = ft_atoi.c \
 		ft_print_ast.c\
 		ft_strsplit.c\
 		ft_ast_add_nodei.c\
-		ft_doubdup.c
+		ft_doubdup.c\
+		ft_filecpy.c\
 
 
 
