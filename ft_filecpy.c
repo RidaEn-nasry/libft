@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 09:03:36 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/03 10:54:44 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:56:28 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ int	ft_filecpy(char *cpyfromfile, char *cpytofile, int mode)
 	int		fdcpy;
 	size_t	rd;
 	char	buff;
-	
+
 	fd = open(cpyfromfile, O_RDONLY);
 	if (fd == -1)
 		return (-1);
-	// fdcpy = open(cpytofile, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	fdcpy = open(cpytofile, mode, 0644);
 	if (fdcpy == -1 || !ft_validfname(cpytofile))
 		return (-1);
