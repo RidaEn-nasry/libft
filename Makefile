@@ -14,6 +14,9 @@
 MAKEFLAGS = -s
 
 NAME = libft.a
+GNL = ../get_next_line/get_next_line.c\
+		../get_next_line/get_next_line_utils.c
+GNL_HEADER = -L../get_next_line/get_next_line.h
 
 SRCS = ft_atoi.c \
 		ft_bzero.c \
@@ -98,7 +101,8 @@ BONUS = ft_lstadd_back.c ft_lstadd_front.c  ft_lstdelone.c\
 		ft_lstlast.c  ft_lstnew.c ft_lstsize.c
 		
 
-OBJS = ${SRCS:.c=.o}
+OBJS = ${SRCS:.c=.o}\
+		${GNL:.c=.o}
 
 OBJSBONUS = ${BONUS:.c=.o}
 
@@ -110,7 +114,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 all: logo ${NAME}
 
 %.o: %.c 
-		${CC} ${CFLAGS}  -c -g $< -o $@
+		${CC} ${CFLAGS} -c -g $< -o $@
 
 $(NAME): ${OBJS} 
 		ar rcs ${NAME} ${OBJS}
@@ -128,7 +132,7 @@ logo:
 	# @echo "\n"
 
 bonus:	${OBJS} ${OBJSBONUS}
-		ar rc ${NAME} ${OBJS} ${OBJSBONUS}
+		ar rc ${NAME} ${OBJS} ${OBJSBONUS} 
 
 
 

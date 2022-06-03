@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/02 15:04:12 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:35:57 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@
 # include <stdio.h>
 # include <stdbool.h>
 # include <fcntl.h>
+# include "../get_next_line/get_next_line.h"
+# include <errno.h>
 
 # define BUFF_SIZE 1024
-// linked lists
+
+/*
+**	LINKED LIST 
+*/
 typedef struct s_list
 {
 	void			*content;
@@ -129,7 +134,14 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char const *s, int fd);
-int					ft_filecpy(char *filepath, char *filecpy);
+
+/*
+** FILE MANIPULATION
+*/
+
+int					ft_filecpy(char *filecpyfrom, char *filecpyto);
+bool				ft_validfname(char *name);
+
 
 /*
 ** LINKED LISTS MANIPULATION
@@ -163,7 +175,7 @@ int					ft_intternary(int condition, int true_value, \
 						int false_value);
 
 /*  
-** env manipulation
+** ENV MANIPULATION
 */
 
 char				*ft_getenv(char **env, char *var);
@@ -171,9 +183,6 @@ bool				ft_envexist(char **env, char *var);
 char				*ft_envexp(char **env, char *var);
 bool				ft_valid_envname(char *env_name);
 
-/* 
-** files manipulation
-*/
-bool				ft_validfname(char *name);
+
 
 #endif

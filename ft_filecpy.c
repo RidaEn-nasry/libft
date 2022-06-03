@@ -1,41 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_filecpy.c                                       :+:      :+:    :+:   */
+/*   ft_filedup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 11:23:49 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/02 15:01:52 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/03 09:03:36 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/03 10:33:35 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
 /**
- * @brief  copy a file
- * @note   if the filecpy is not found it's created and the content is copied
- * if it's is found it's overwritten.
- * @param  *filepath: the path of the file to copy
- * @param  *filecpy: the name of the file to copy to
- * @retval 0 on success, 1 on error
+ * @brief  duplicating an already existing file into a new file
+ * @note   if cpytofile does not exist, it will be created
+ * @param  *cpyfromfile: the file to be copied
+ * @param  *cpytofile: the file to be copied to
+ * @retval int: 0 in success, 1 in failure
  */
 
-int	ft_filecpy(char *filepath, char *filecpy)
+int	ft_filecpy(char *cpyfromfile, char *cpytofile)
 {
 	int		fd;
-	int		fd2;
-	char	buf;
+	int		fdcpy;
+	size_t	rd;
+	char	buff;
 
-	fd = open(filepath, O_RDONLY);
+	fd = open(cpyfromfile, O_RDONLY);
 	if (fd == -1)
-		return (1);
-	fd2 = open(filecpy, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	if (fd2 == -1)
-		return (1);
-	while (read(fd, &buf, 1))
-		write(fd2, &buf, 1);
+		return (-1);
+	fdcpy = open(cpytofile, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (fdcpy == -1 || !ft_validfname(cpytofile))
+		return (-1);
+	rd = read(fd, &buff, 1);
+	while (rd > 0)
+	{
+		write(fdcpy, &buff, 1);
+		rd = read(fd, &buff, 1);
+	}
 	close(fd);
-	close(fd2);
+	close(fdcpy);
 	return (0);
 }
