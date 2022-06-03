@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/03 10:35:57 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/03 10:51:50 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void				ft_putstr_fd(char const *s, int fd);
 ** FILE MANIPULATION
 */
 
-int					ft_filecpy(char *filecpyfrom, char *filecpyto);
+int					ft_filecpy(char *filecpyfrom, char *filecpyto, int mode);
 bool				ft_validfname(char *name);
 
 
