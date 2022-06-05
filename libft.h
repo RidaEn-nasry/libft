@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/05 09:09:21 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/05 09:17:58 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char				*ft_strstr(const char *heystack, const char *needle);
 
 char				*ft_strtok(char *str, const char *delim);
-int					*ft_isspace(char c);
+bool				ft_isspace(char c);
 int					*ft_stcount(const char *s, char c);
 char				*ft_getnextS(char *s);
 char				*ft_lineinsert(char *line, char *content, \

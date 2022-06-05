@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 09:10:14 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/05 09:12:11 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/05 09:16:05 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ bool	ft_sisspace(char *s)
 	{
 		if (!ft_isspace(s[i]))
 			return (false);
+		i++;
 	}
 	return (true);
 }
