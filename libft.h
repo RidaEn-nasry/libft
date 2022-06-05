@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/03 10:51:50 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/05 09:09:21 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ t_ast				*ft_ast_add_noderli(t_ast *ast, char *sym, void *content, size_t i);
 void				ft_free_ast(t_ast *ast);
 void				ft_print_ast(t_ast *ast);
 t_ast				*ft_ast_add_nodei(t_ast *root, char *sym, void *content, char *where);
+
 /*
 ** String manipulation
 */
@@ -99,6 +100,7 @@ char				*ft_lineinsert(char *line, char *content, \
 													size_t start, size_t end);
 char				*ft_lindetach(char *line, size_t start, size_t end);
 char				**ft_strsplit(char const *s, char *delim);
+bool				ft_sisspace(char *s);
 
 /*
 ** MEMORY MANIIPULATION
@@ -173,6 +175,7 @@ void				*ft_ternary(int condition, void *true_value, \
 						void *false_value);						
 int					ft_intternary(int condition, int true_value, \
 						int false_value);
+
 
 /*  
 ** ENV MANIPULATION

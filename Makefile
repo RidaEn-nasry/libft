@@ -94,6 +94,7 @@ SRCS = ft_atoi.c \
 		ft_ast_add_nodei.c\
 		ft_doubdup.c\
 		ft_filecpy.c\
+		ft_sisspace.c
 
 
 
