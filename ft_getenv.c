@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 14:59:18 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/13 15:03:24 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/05 12:45:21 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char    *ft_getenv(char **env, char *name)
     i = 0;
     while (env[i])
     {
-        if (ft_strncmp(env[i], name, ft_strlen(name)) == 0)
+        if (ft_strncmp(env[i], name, ft_strlen(env[i])) == 0)
             return (env[i] + ft_strlen(name) + 1);
         i++;
     }
