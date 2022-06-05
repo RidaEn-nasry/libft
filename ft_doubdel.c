@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 11:16:17 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/22 12:46:34 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/05 09:53:32 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool	check_null(char **array, size_t start, size_t end, size_t *len)
 	if (start > end)
 		return (false);
 	*len = ft_doublen((const char **)array);
-	if (start >= *len || end >= *len)
+	if (start >= *len || end > *len)
 		return (false);
 	return (true);
 }
