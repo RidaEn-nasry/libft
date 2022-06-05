@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/05 09:17:58 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/05 12:28:24 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ size_t				ft_doublen(const char **doub);
 char				*ft_doubconcat(char **doub, char *s);
 int					ft_doubcount(const char **doub, char *to_find);
 char				**ft_doubdup(char **doub);
-
+char				**ft_doubadd(char **doub, char *content);
 /*
 ** FILE DESCRIPTORS MANIPULATION
 */
