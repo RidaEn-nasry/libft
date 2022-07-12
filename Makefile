@@ -6,7 +6,7 @@
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 19:29:45 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/04/28 12:58:09 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/07/09 20:12:33 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,7 @@
 MAKEFLAGS = -s
 
 NAME = libft.a
-GNL = ../get_next_line/get_next_line.c\
-		../get_next_line/get_next_line_utils.c
-GNL_HEADER = -L../get_next_line/get_next_line.h
-
+GNL = ./get_next_line.c ./get_next_line_utils.c  
 SRCS = ft_atoi.c \
 		ft_bzero.c \
 		ft_isalnum.c \
@@ -80,22 +77,22 @@ SRCS = ft_atoi.c \
 		ft_lineinsert.c\
 		ft_envexp.c\
 		ft_valid_envname.c\
-		ft_linedetach.c\
 		ft_doubdel.c\
-		ft_doubcount.c\
-		ft_ast_new_node.c\
-		ft_ast_add_noder.c\
-		ft_ast_add_nodel.c\
-		ft_ast_add_nodelri.c\
-		ft_ast_add_noderli.c\
-		ft_free_ast.c\
-		ft_print_ast.c\
 		ft_strsplit.c\
-		ft_ast_add_nodei.c\
 		ft_doubdup.c\
 		ft_filecpy.c\
 		ft_sisspace.c\
-		ft_doubadd.c
+		ft_doubadd.c\
+		ft_doubcount.c\
+		ft_filecount.c 
+#ft_free_ast.c\
+#ft_ast_new_node.c\
+#ft_ast_add_noder.c\
+#ft_ast_add_nodel.c\
+#ft_ast_add_nodelri.c\
+#ft_ast_add_noderli.c\
+#ft_ast_add_nodei.c\
+#ft_print_ast.c\
 
 
 

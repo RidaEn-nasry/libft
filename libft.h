@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/05 12:28:24 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/07/09 20:44:38 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 # include <stdio.h>
 # include <stdbool.h>
 # include <fcntl.h>
-# include "../get_next_line/get_next_line.h"
+//# include "../get_next_line/get_next_line.h"
 # include <errno.h>
 
-# define BUFF_SIZE 1024
+# define BUFFER_SIZE 1024
 
 /*
 **	LINKED LIST 
@@ -137,12 +137,14 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 
+char	*get_next_line(int fd);
 /*
 ** FILE MANIPULATION
 */
 
 int					ft_filecpy(char *filecpyfrom, char *filecpyto, int mode);
 bool				ft_validfname(char *name);
+size_t				ft_filecount(char *file);
 
 
 /*
