@@ -21,7 +21,7 @@
 # include <stdio.h>
 # include <stdbool.h>
 # include <fcntl.h>
-//# include "../get_next_line/get_next_line.h"
+# include "./get_next_line.h"
 # include <errno.h>
 
 # define BUFFER_SIZE 1024
@@ -137,7 +137,6 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 
-char	*get_next_line(int fd);
 /*
 ** FILE MANIPULATION
 */
