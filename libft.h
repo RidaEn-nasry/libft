@@ -21,7 +21,7 @@
 # include <stdio.h>
 # include <stdbool.h>
 # include <fcntl.h>
-# include "./get_next_line.h"
+
 # include <errno.h>
 
 # define BUFFER_SIZE 1024
@@ -144,6 +144,7 @@ void				ft_putstr_fd(char const *s, int fd);
 int					ft_filecpy(char *filecpyfrom, char *filecpyto, int mode);
 bool				ft_validfname(char *name);
 size_t				ft_filecount(char *file);
+char				*get_next_line( int fd );
 
 
 /*
