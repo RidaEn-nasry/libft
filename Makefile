@@ -13,8 +13,7 @@
 # silent mode 
 MAKEFLAGS = -s
 
-NAME = libft.a
-GNL = ./get_next_line.c ./get_next_line_utils.c  
+NAME = libft.a 
 SRCS = ft_atoi.c \
 		ft_bzero.c \
 		ft_isalnum.c \
@@ -84,7 +83,8 @@ SRCS = ft_atoi.c \
 		ft_sisspace.c\
 		ft_doubadd.c\
 		ft_doubcount.c\
-		ft_filecount.c 
+		ft_filecount.c \
+		get_next_line.c
 #ft_free_ast.c\
 #ft_ast_new_node.c\
 #ft_ast_add_noder.c\
@@ -100,8 +100,7 @@ BONUS = ft_lstadd_back.c ft_lstadd_front.c  ft_lstdelone.c\
 		ft_lstlast.c  ft_lstnew.c ft_lstsize.c
 		
 
-OBJS = ${SRCS:.c=.o}\
-		${GNL:.c=.o}
+OBJS = ${SRCS:.c=.o}
 
 OBJSBONUS = ${BONUS:.c=.o}
 
