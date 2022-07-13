@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:37:56 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/04 18:36:59 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/07/13 14:54:07 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void    *ft_realloc(void *p, size_t size)
 {
     void    *new;
     
-    exitIF(!p, "p cannot be NULL");
-    exitIF(!size, "size cannot be 0");
+    exitif(!p, "p cannot be NULL");
+    exitif(!size, "size cannot be 0");
     new = malloc(size);
-    exitIF(!new, "allocation failed");
+    exitif(!new, "allocation failed");
     ft_memcpy(new, p, size);
     free(p);
     return (new);
