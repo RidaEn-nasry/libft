@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/07/13 22:55:55 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/07/13 23:20:11 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,7 +153,6 @@ size_t				ft_filelcount(char *file);
 char				*get_next_line( int fd );
 char				**ft_file_to_2darr(char *file);
 
-
 /*
 ** LINKED LISTS MANIPULATION
 */
@@ -193,5 +192,11 @@ char				*ft_getenv(char **env, char *var);
 bool				ft_envexist(char **env, char *var);
 char				*ft_envexp(char **env, char *var);
 bool				ft_valid_envname(char *env_name);
+
+/*
+** DUMP VALUES TO THEIR BIN REPRESENTATION 
+*/
+
+void				ft_dumpbin_int( int num );
 
 #endif
