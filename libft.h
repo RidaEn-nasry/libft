@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/07/13 22:21:32 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/07/13 22:55:55 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ char				**ft_strsplit(char const *s, char *delim);
 bool				ft_sisspace(char *s);
 bool				ft_isempty(char *str);
 bool				ft_strofonly(char *str, char *charset);
+bool				ft_isnumber(char *str);
 
 /*
 ** MEMORY MANIIPULATION
