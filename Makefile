@@ -84,7 +84,8 @@ SRCS = ft_atoi.c \
 		ft_doubadd.c\
 		ft_doubcount.c\
 		ft_filecount.c \
-		get_next_line.c
+		get_next_line.c\
+		ft_isempty.c
 #ft_free_ast.c\
 #ft_ast_new_node.c\
 #ft_ast_add_noder.c\

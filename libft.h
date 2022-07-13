@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/07/09 20:44:38 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/07/13 11:53:16 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ char				*ft_lineinsert(char *line, char *content, \
 char				*ft_lindetach(char *line, size_t start, size_t end);
 char				**ft_strsplit(char const *s, char *delim);
 bool				ft_sisspace(char *s);
+bool				ft_isempty(char *str);
 
 /*
 ** MEMORY MANIIPULATION
@@ -167,7 +168,7 @@ long int			ft_isPrime(long int n);
 **	error handling
 */
 
-int					exitIF(int condition, char *message);
+int					exitif(int condition, char *message);
 
 /*
 ** Miscelaneous functions
