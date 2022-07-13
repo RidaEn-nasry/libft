@@ -6,10 +6,9 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/07/13 11:53:16 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/07/13 20:13:54 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -42,24 +41,26 @@ typedef struct s_list
 				just look at American Propoganda's success.			
 */
 
-typedef	struct		s_AST
+typedef struct s_AST
 {
 	char			*sym;
 	void			*content;
 	struct s_AST	*left;
 	struct s_AST	*right;
 	struct s_AST	*prev;
-}					t_ast;
+}	t_ast;
 
 t_ast				*ft_ast_new_node(char *sym, void *content);
 t_ast				*ft_ast_add_noder(t_ast *ast, char *sym, void *content);
 t_ast				*ft_ast_add_nodel(t_ast *ast, char *sym, void *content);
 t_ast				*ft_ast_add_nodelri(t_ast *ast, char *sym, \
-					void *content, size_t i);
-t_ast				*ft_ast_add_noderli(t_ast *ast, char *sym, void *content, size_t i);
+										void *content, int ri);
+t_ast				*ft_ast_add_noderli(t_ast *ast, char *sym, \
+						void *content, size_t i);
 void				ft_free_ast(t_ast *ast);
 void				ft_print_ast(t_ast *ast);
-t_ast				*ft_ast_add_nodei(t_ast *root, char *sym, void *content, char *where);
+t_ast				*ft_ast_add_nodei(t_ast *root, char *sym, \
+						void *content, char *where);
 
 /*
 ** String manipulation
@@ -122,14 +123,14 @@ void				ft_sfree(void *ptr);
 */
 
 void				ft_doubfree(void **doub, size_t size);
-void				**ft_doubrealloc(void **doub, size_t size);
-char				**ft_doubdel(char **array, size_t start, size_t end);
-char				**ft_doubtrim(char **doub, char *set);
-size_t				ft_doublen(const char **doub);
-char				*ft_doubconcat(char **doub, char *s);
-int					ft_doubcount(const char **doub, char *to_find);
+void				**ft_2darr_realloc(void **doub, size_t size);
+char				**ft_2darr_del(char **array, size_t start, size_t end);
+char				**ft_2darr_trim(char **doub, char *set);
+size_t				ft_2darr_len(const char **doub);
+char				*ft_2darr_to_str(char **doub, char *s);
+int					ft_2darr_count(const char **doub, char *to_find);
 char				**ft_doubdup(char **doub);
-char				**ft_doubadd(char **doub, char *content);
+char				**ft_2darr_add(char **doub, char *content);
 /*
 ** FILE DESCRIPTORS MANIPULATION
 */
@@ -144,9 +145,9 @@ void				ft_putstr_fd(char const *s, int fd);
 
 int					ft_filecpy(char *filecpyfrom, char *filecpyto, int mode);
 bool				ft_validfname(char *name);
-size_t				ft_filecount(char *file);
+size_t				ft_filelcount(char *file);
 char				*get_next_line( int fd );
-
+char				**ft_2darr_trim(char **doub, char *set);
 
 /*
 ** LINKED LISTS MANIPULATION
@@ -179,7 +180,6 @@ void				*ft_ternary(int condition, void *true_value, \
 int					ft_intternary(int condition, int true_value, \
 						int false_value);
 
-
 /*  
 ** ENV MANIPULATION
 */
@@ -188,7 +188,5 @@ char				*ft_getenv(char **env, char *var);
 bool				ft_envexist(char **env, char *var);
 char				*ft_envexp(char **env, char *var);
 bool				ft_valid_envname(char *env_name);
-
-
 
 #endif

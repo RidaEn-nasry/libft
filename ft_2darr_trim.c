@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_doubdup.c                                       :+:      :+:    :+:   */
+/*   ft_2darr_trim.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 09:34:53 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/07/13 20:19:03 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/04/25 11:52:11 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/07/13 19:56:36 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-/**
- * @brief  duplicate a char **
- * @note   **doub is not freed
- * @param  **doub: the char ** to duplicate
- * @retval **: the duplicated char **
+/* ft_dobubtrim.c trim double pointers char ** from char * set
+ * it returns the double pointer array
+ *  or NULL if the pointer is NULL
  */
 
-char	**ft_doubdup(char **doub)
+#include "libft.h"
+
+char	**ft_2darr_trim(char **doub, char *set)
 {
 	size_t	i;
-	char	**new_doub;
 
-	if (!doub)
-		return (NULL);
-	new_doub = malloc(sizeof(char *) * ft_2darr_len((const char **)doub) + 1);
 	i = 0;
+	if (!doub || !set)
+		return (NULL);
 	while (doub[i])
 	{
-		new_doub[i] = ft_strdup(doub[i]);
+		if (ft_strnstr(doub[i], set, ft_strlen(doub[i])))
+		{
+			doub[i] = ft_strtrim(doub[i], set);
+		}
 		i++;
 	}
-	new_doub[i] = NULL;
-	return (new_doub);
+	return (doub);
 }

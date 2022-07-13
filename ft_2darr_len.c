@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_doubdup.c                                       :+:      :+:    :+:   */
+/*   ft_2darr_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 09:34:53 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/07/13 20:19:03 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/05/05 09:29:54 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/07/13 20:13:44 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ft_2darr_len(const char **)
+	* 
+	* @description: this function computes the length of the double pointer. 
+	* @param const char **double: pointer to a pointer to a string
+	* @return: the length of the string
+*/
+
 #include "libft.h"
 
-/**
- * @brief  duplicate a char **
- * @note   **doub is not freed
- * @param  **doub: the char ** to duplicate
- * @retval **: the duplicated char **
- */
-
-char	**ft_doubdup(char **doub)
+size_t	ft_2darr_len(char const **doub)
 {
 	size_t	i;
-	char	**new_doub;
 
-	if (!doub)
-		return (NULL);
-	new_doub = malloc(sizeof(char *) * ft_2darr_len((const char **)doub) + 1);
 	i = 0;
 	while (doub[i])
-	{
-		new_doub[i] = ft_strdup(doub[i]);
 		i++;
-	}
-	new_doub[i] = NULL;
-	return (new_doub);
+	return (i);
 }

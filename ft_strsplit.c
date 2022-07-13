@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 13:51:23 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/05/26 11:43:52 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/07/13 20:04:06 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	**ft_strsplit(char const *s, char *delim)
 		j = 0;
 		if (i == ft_strlen(s) - 1)
 		{
-			ret = (char **)ft_doubrealloc((void **)ret, k + 1);
+			ret = (char **)ft_2darr_realloc((void **)ret, k + 1);
 			ret[k] = ft_substr(s, l, i + 1);
 			k++;
 		}
@@ -58,7 +58,7 @@ char	**ft_strsplit(char const *s, char *delim)
 			}
 			if (delim[j] == '\0')
 			{
-				ret = (char **)ft_doubrealloc((void **)ret, k + 1);
+				ret = (char **)ft_2darr_realloc((void **)ret, k + 1);
 				ret[k] = ft_substr(s, l, i - ft_strlen(delim));
 				k++;
 				l = i;

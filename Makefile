@@ -60,10 +60,10 @@ SRCS = ft_atoi.c \
 		ft_strtok.c\
 		ft_isspace.c\
 		ft_realloc.c\
-		ft_doubtrim.c\
+		ft_2darr_trim.c\
 		ft_isPrime.c\
-		ft_doublen.c\
-		ft_doubrealloc.c\
+		ft_2darr_len.c\
+		ft_2darr_realloc.c\
 		ft_doubfree.c\
 		ft_stcount.c\
 		ft_sfree.c\
@@ -71,21 +71,22 @@ SRCS = ft_atoi.c \
 		ft_ternary.c\
 		ft_intternary.c\
 		ft_getenv.c\
-		ft_doubconcat.c\
+		ft_2darr_to_str.c\
 		ft_envexist.c\
 		ft_lineinsert.c\
 		ft_envexp.c\
 		ft_valid_envname.c\
-		ft_doubdel.c\
+		ft_2darr_del.c\
 		ft_strsplit.c\
 		ft_doubdup.c\
 		ft_filecpy.c\
 		ft_sisspace.c\
-		ft_doubadd.c\
-		ft_doubcount.c\
-		ft_filecount.c \
+		ft_2darr_add.c\
+		ft_2darr_count.c\
+		ft_filelcount.c \
 		get_next_line.c\
-		ft_isempty.c
+		ft_isempty.c\
+		ft_file_to_2darr.c
 #ft_free_ast.c\
 #ft_ast_new_node.c\
 #ft_ast_add_noder.c\
