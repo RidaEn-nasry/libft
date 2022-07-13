@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:00:55 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/07/13 20:13:54 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/07/13 22:21:32 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ char				*ft_lindetach(char *line, size_t start, size_t end);
 char				**ft_strsplit(char const *s, char *delim);
 bool				ft_sisspace(char *s);
 bool				ft_isempty(char *str);
+bool				ft_strofonly(char *str, char *charset);
 
 /*
 ** MEMORY MANIIPULATION
@@ -119,7 +120,7 @@ void				*ft_realloc(void *ptr, size_t size);
 void				ft_sfree(void *ptr);
 
 /* 
-** DOUBLE POINTER MANIPULATION
+**  2D ARRAY MANIPULATION
 */
 
 void				ft_doubfree(void **doub, size_t size);
@@ -131,6 +132,8 @@ char				*ft_2darr_to_str(char **doub, char *s);
 int					ft_2darr_count(const char **doub, char *to_find);
 char				**ft_doubdup(char **doub);
 char				**ft_2darr_add(char **doub, char *content);
+
+
 /*
 ** FILE DESCRIPTORS MANIPULATION
 */
@@ -147,7 +150,8 @@ int					ft_filecpy(char *filecpyfrom, char *filecpyto, int mode);
 bool				ft_validfname(char *name);
 size_t				ft_filelcount(char *file);
 char				*get_next_line( int fd );
-char				**ft_2darr_trim(char **doub, char *set);
+char				**ft_file_to_2darr(char *file);
+
 
 /*
 ** LINKED LISTS MANIPULATION
