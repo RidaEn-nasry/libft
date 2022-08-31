@@ -89,7 +89,8 @@ SRCS = ft_atoi.c \
 		ft_file_to_2darr.c\
 		ft_strofonly.c\
 		ft_isnumber.c\
-		ft_dumpbin_int.c
+		ft_dumpbin_int.c\
+		ft_file_to_str.c 
 #ft_free_ast.c\
 #ft_ast_new_node.c\
 #ft_ast_add_noder.c\
